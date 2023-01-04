@@ -1,0 +1,180 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: url("./background.jpeg");
+  background-size: cover;
+  background-position: 50% 60%;
+  background-attachment: fixed;
+  color: white;
+  font-family: Quicksand, sans-serif;
+  overflow-y: hidden;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 3rem;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.drag-container {
+  margin: 20px;
+}
+
+.drag-list {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Columns */
+.drag-column {
+
+  margin: 0 10px;
+  /* THIS ALLOWS US TO EVENLY DEVIDE THE SAPCE WITHIN THE PAGE IF ONLY ONE COLUMN IT WOULD TAKE THE ENTIRE SCREEN FLEX 1 */
+  flex: 1;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  overflow-x: hidden;
+}
+
+/* Scrollbar On Columns*/
+.custom-scroll {
+  /* OVERFLOW Y AUTO ALLOS US TO SCROLL ON THE Y AXIS */
+  overflow-y: auto;
+  max-height: 52vh;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.header h1 {
+  font-size: 1.25rem;
+}
+
+.drag-item-list {
+  min-height: 50px;
+}
+
+.drag-item {
+  margin: 10px;
+  padding: 10px;
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.drag-item:focus {
+  outline: none;
+  background-color: white;
+  color: black;
+}
+
+/* Add Button Group */
+.add-btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-btn {
+  margin: 10px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+  border-radius: 5px;
+  transition: all 0.1s ease-in;
+  user-select: none;
+}
+
+.add-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
+.add-btn:active {
+  transform: scale(0.97);
+}
+
+.solid {
+  display: none;
+}
+
+.solid:hover {
+  transition: unset;
+  filter: brightness(95%);
+  color: black;
+}
+
+.plus-sign {
+  font-size: 1.5rem;
+  margin-right: 5px;
+  position: relative;
+  top: -3px;
+}
+
+.add-container {
+  margin: 10px;
+  padding: 0;
+  border-radius: 10px;
+  min-height: 100px;
+  display: none;
+}
+
+.add-item {
+  width: 100%;
+  min-height: 100px;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  margin: 5px auto;
+  resize: none;
+  color: black;
+  padding: 10px;
+}
+
+.add-item:focus {
+  outline: none;
+}
+
+/* Media Query: Laptop */
+@media screen and (max-width: 1800px) {
+  .main-title {
+    font-size: 2rem;
+  }
+}
+
+/* Media Query: Large Smartphone (Vertical) */
+@media screen and (max-width: 600px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .drag-container {
+    margin: 0;
+  }
+
+  .drag-list {
+    display: block;
+  }
+
+  .drag-column {
+    margin: 10px;
+  }
+}
